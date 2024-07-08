@@ -38,7 +38,14 @@
 {% endblock %}
 
 {% block header %}
-<h1>Blog</h1>
+<h1>
+    <img src="{{ blogBase['avatarUrl'] }}" class="avatar circle" id="avatarImg" alt="avatar">
+    {%- if blogBase['displayTitle']=='eekdai' -%}
+    <a class="blogTitle" href="https://meekdai.com">{{ blogBase['displayTitle'] }}</a>
+    {% else -%}
+    <a class="blogTitle">{{ blogBase['displayTitle'] }}</a>
+    {%- endif -%}
+</h1>
 <div class="title-right">
     <a href="{{ blogBase['homeUrl'] }}/tag.html" id="buttonSearch" class="btn btn-invisible circle" title="{{ i18n['Search'] }}">
         <svg class="octicon" width="16" height="16" >
